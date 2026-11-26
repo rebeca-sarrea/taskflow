@@ -3,7 +3,7 @@ $pageTitle = 'Tarefas';
 $status = $_GET['status'] ?? '';
 $sql = 'SELECT * FROM tarefas';
 if ($status !== '') {
-    $sql .= " WHERE status='Pendente'";
+    $sql .= " WHERE status='$status'";
 }
 $sql .= ' ORDER BY prazo';
 $tarefas = $pdo->query($sql)->fetchAll();
